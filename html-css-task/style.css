@@ -49,7 +49,7 @@ header>.container{
     margin-left: 50px;
 }
 .description__block{
-    padding-top: 80px;
+    padding: 80px 0 65px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -64,4 +64,30 @@ header>.container{
     font-family: "Metropolis-thin";
     font-size: 35px;
     line-height: 50px;
+}
+.cards>.container{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.cards{
+    background-color: #ebf2f2;
+    padding-top: 40px;
+}
+.card{
+    width: 382px;
+    height: 170px;
+    padding: 40px 30px;
+    margin: 0 0 25px 25px;
+    background-color: white;
+    display: flex;
+    border-radius: 5px;
+}
+.card>.card__image{
+    width: auto;
+    height: 60px;
+}
+.card>.text{
+    margin-left: 20px;
 }
