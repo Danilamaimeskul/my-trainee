@@ -66,21 +66,30 @@ header>.container{
 }
 .description__block>.description{
     font-family: "Metropolis-thin";
-    font-size: 35px;
+    font-size: 28px;
     line-height: 50px;
 }
 .cards>.container{
     display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
+    /* justify-content: flex-end; */
+    /* flex-direction: row; */
     flex-wrap: wrap;
 }
 .cards{
     background-color: #ebf2f2;
     padding-top: 40px;
 }
+.cards__block{
+    display: flex;
+    /* justify-content: flex-end; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: 183px;
+}
 .card{
-    width: 382px;
+    max-width: 382px;
+    width: 100%;
     height: 170px;
     padding: 40px 30px;
     margin: 0 0 25px 25px;
