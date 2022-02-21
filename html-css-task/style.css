@@ -50,7 +50,7 @@ header>.container{
     align-items: center;
 }
 .menu__items{
-    /* margin-left: 50px; */
+    margin-left: 50px;
 }
 .description__block{
     padding: 80px 0 65px;
@@ -98,11 +98,19 @@ header>.container{
 
 
 
-
+.nav-arrow{
+    transform: rotate(45deg) translateY(-6px);
+    /* -webkit-transform: rotate(45deg) translateY(-6px); */
+    border: solid #191e1e;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    /* margin-left: -6px; */
+}
 li a, .dropbtn {
     display: inline-block;
     text-align: center;
-    padding: 14px 16px;
+    /* padding: 14px 16px; */
     text-decoration: none;
   }
   
