@@ -15,8 +15,12 @@
     padding: 0;
     font-family: "Metropolis-medium";
 }
+a{
+    color: black;
+    text-decoration: none;
+}
 .container{
-    max-width: 1200px;
+    max-width: 1140px;
     width: 100%;
     margin: 0 auto;
 }
@@ -27,7 +31,7 @@ header{
     align-items: center;
 }
 header>.container{
-    max-width: 1200px;
+    max-width: 1140px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -46,7 +50,7 @@ header>.container{
     align-items: center;
 }
 .menu__items{
-    margin-left: 50px;
+    /* margin-left: 50px; */
 }
 .description__block{
     padding: 80px 0 65px;
@@ -91,3 +95,46 @@ header>.container{
 .card>.text{
     margin-left: 20px;
 }
+
+
+
+
+li a, .dropbtn {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  a:hover{
+    color: #6db33f;
+  }
+  .dropdown-content a:hover {
+    color: #6db33f;
+    }
+  
+  li.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

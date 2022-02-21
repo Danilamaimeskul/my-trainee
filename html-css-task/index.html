@@ -8,17 +8,69 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
         <header>
             <div class="container">
                 <a href="#"><img class="logo" src="assets/images/logo.svg" alt="logo"></a>
                 <ul class="menu__list">
-                    <li class="menu__items">Why Spring</li>
-                    <li class="menu__items">Learn</li>
-                    <li class="menu__items">Projects</li>
-                    <li class="menu__items">Training</li>
-                    <li class="menu__items">Support</li>
-                    <li class="menu__items">Community</li>
+                    <li class="menu__items">
+                        <div class="dropdown">
+                            <span class="dropbtn">Why Spring</span>
+                            <div class="dropdown-content">
+                              <a href="#">Overview</a>
+                              <a href="#">Microservices</a>
+                              <a href="#">Reactive</a>
+                              <a href="#">Event Driven</a>
+                              <a href="#">Cloud</a>
+                              <a href="#">Web Applications</a>
+                              <a href="#">Serverless</a>
+                              <a href="#">Batch</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu__items">
+                        <div class="dropdown">
+                            <span class="dropbtn">Learn</span>
+                            <div class="dropdown-content">
+                              <a href="#">Overview</a>
+                              <a href="#">Quickstart</a>
+                              <a href="#">Guides</a>
+                              <a href="#">Blog</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu__items">
+                        <div class="dropdown">
+                            <span class="dropbtn">Projects</span>
+                            <div class="dropdown-content">
+                              <a href="#">Overview</a>
+                              <a href="#">Spring Boot</a>
+                              <a href="#">Spring Framework</a>
+                              <a href="#">Spring Cloud</a>
+                              <a href="#">Spring Cloud Data Flow</a>
+                              <a href="#">Spring Data</a>
+                              <a href="#">Spring Integration</a>
+                              <a href="#">Spring Batch</a>
+                              <a href="#">Spring Security</a>
+                              <a href="#">View all projects</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu__items">
+                        <a href="#">Training</a>
+                    </li>
+                    <li class="menu__items">
+                        <a href="#">Support</a>
+                    </li>
+                    <li class="menu__items">
+                        <div class="dropdown">
+                            <span class="dropbtn">Community</span>
+                            <div class="dropdown-content">
+                              <a href="#">Overview</a>
+                              <a href="#">Events</a>
+                              <a href="#">Team</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </header>
@@ -185,8 +237,6 @@
                             <p class="card__description">Facilitates the development of contract-first SOAP web services.</p>
                         </div>
                     </div>
-                   
-                    
                 </div>
             </div>
         </main>
