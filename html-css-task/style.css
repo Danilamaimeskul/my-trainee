@@ -51,7 +51,13 @@ header>.container{
     margin-right: 15px;
 }
 .menu__items{
+    height: 100%;
+    display: flex;
     margin-left: 50px;
+}
+.menu__items>a{
+    display: flex;
+    align-items: center;
 }
 .burger{
     display: none;
@@ -100,16 +106,21 @@ header>.container{
     padding-left: 183px;
     padding-bottom: 80px;
     border-bottom: 2px solid gray;
+    gap: 20px;
 }
 .card{
     /* max-width: 382px; */
-    width: 39%;
+    width: 41%;
     height: 170px;
     padding: 40px 30px;
-    margin: 0 0 25px 25px;
+    /* margin: 0 0 25px 25px; */
     background-color: white;
     display: flex;
     border-radius: 5px;
+    transition: all .2s linear;
+}
+.card:hover{
+    transform: translateY(-10px);
 }
 .card>.card__image{
     width: 20%;
@@ -118,6 +129,10 @@ header>.container{
 .card>.text{
     width: 80%;
     margin-left: 20px;
+}
+.card__description{
+    line-height: 20px;
+    margin-top: 15px;
 }
 
 
@@ -145,8 +160,10 @@ li a, .dropbtn {
     color: #6db33f;
     }
   
-  li.dropdown {
-    display: inline-block;
+  .dropdown {
+      display: flex;
+      align-items: center;
+    /* display: inline-block; */
   }
   
   .dropdown-content {
@@ -157,6 +174,10 @@ li a, .dropbtn {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 5px;
+    margin-top: 50px;
+    transition: all .4s ease-in;
+
+
   }
   
   .dropdown-content a {
@@ -165,11 +186,16 @@ li a, .dropbtn {
     text-decoration: none;
     display: block;
     text-align: left;
+    opacity: 0;
   }
   
   
-  .dropdown:hover .dropdown-content {
+  .menu__items:hover .dropdown-content {
     display: block;
+
+  }
+  .menu__items:hover a{
+    opacity: 1;
   }
 .container>.title{
     margin-bottom: 100px;
