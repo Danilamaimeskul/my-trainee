@@ -175,7 +175,8 @@ li a, .dropbtn {
     z-index: 1;
     border-radius: 5px;
     margin-top: 50px;
-    transition: all .4s ease-in;
+    transition: all .4s ease-in; 
+    /* visibility: none; тут нада */
 
 
   }
@@ -372,3 +373,4 @@ svg{
         margin-right: 25px;
     }
 }
+
