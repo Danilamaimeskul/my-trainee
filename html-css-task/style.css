@@ -108,11 +108,13 @@ header>.container{
     border-bottom: 2px solid gray;
     gap: 20px;
 }
+.card__link{
+    width: 48%;
+}
 .card{
     /* max-width: 382px; */
-    width: 41%;
-    height: 170px;
     padding: 40px 30px;
+    height: 170px;
     /* margin: 0 0 25px 25px; */
     background-color: white;
     display: flex;
@@ -368,7 +370,7 @@ svg{
 }
 
 @media (max-width: 800px){
-    .card{
+    .card__link{
         width: 100%;
         margin-right: 25px;
     }
