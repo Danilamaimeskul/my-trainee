@@ -268,6 +268,7 @@ const projects = [
 const headerBlock = document.querySelector('.menu__list');
 const projectBlock = document.querySelector('.cards__block');
 
+
 for(let item of headerMenu){
     let menuItem = document.createElement('li');
     menuItem.className = "menu__items";
@@ -288,8 +289,8 @@ for(let item of headerMenu){
             <div class="nav-arrow"></div>
         `;
 
-        menuItem.append(dropdownContent);
         menuItem.append(dropdownButton);
+        menuItem.append(dropdownContent);
     } else{
         menuItem.innerHTML = `<a href="${item.href}">${item.title}</a>`
     }
@@ -328,6 +329,26 @@ for(let item of projects){
 
     projectBlock.append(link);
 }
+
+for(let elem of document.querySelectorAll('.dropdown')){
+    let menuItem = elem.closest(".menu__items");
+    elem.addEventListener("click", e => menuItem.classList.toggle('active'))
+    elem.removeEventListener("click", e => menuItem.classList.toggle('active'))
+}
+
+for(let elem of document.querySelectorAll('.controller')){
+    const burgerMenu = document.querySelector(".menu__list");
+    elem.addEventListener("click", function(e) {
+        burgerMenu.classList.toggle('active')
+        document.body.classList.toggle('lock');
+    });
+    elem.removeEventListener("click", function(e) {
+        burgerMenu.classList.toggle('active')
+        document.body.classList.toggle('lock');
+    });
+}
+
+
 
 // {
 //     title: "Spring Boot",
