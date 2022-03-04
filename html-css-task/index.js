@@ -372,7 +372,7 @@ function projectSearch(text){
             let cardProject = element.closest(".card__link");
             let title = element.querySelector(".card__title").innerHTML.toLowerCase();
             let description = element.querySelector(".card__description").innerHTML.toLowerCase();
-                if(title.search(text) === -1 || description.search(text) === -1){
+                if(title.search(text) === -1 && description.search(text) === -1){
                     cardProject.classList.add("hide");
                 }
                 else{
