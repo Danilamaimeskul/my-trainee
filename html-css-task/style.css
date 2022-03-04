@@ -19,6 +19,9 @@ a{
     color: black;
     text-decoration: none;
 }
+.hide{
+    display: none;
+}
 .container{
     max-width: 1140px;
     width: 100%;
@@ -29,6 +32,7 @@ header{
     border-bottom: 1px solid lightgray;
     display: flex;
     align-items: center;
+    z-index: 4;
 }
 header>.container{
     max-width: 1140px;
@@ -51,6 +55,7 @@ header>.container{
     margin-right: 15px;
 }
 .menu__items{
+    position: relative;
     height: 100%;
     display: flex;
     margin-left: 50px;
@@ -99,6 +104,27 @@ header>.container{
     background-color: #ebf2f2;
     padding-top: 40px;
     overflow: hidden;
+}
+.search__block{
+    width: 100%;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search__result{
+    font-size: 35px;
+}
+.hidden{
+    visibility: hidden;
+}
+.search{
+    border-radius: 0;
+    border: 1px solid black;
+    font-size: 20px;
+    width: 300px;
+    height: 47px;
+    padding-left: 20px;
 }
 .cards__block{
     display: flex;
@@ -183,6 +209,7 @@ li a, .dropbtn {
     transition: all .2s ease-in; 
     opacity: 0;
     visibility: hidden; 
+    right: -7px;
   }
   
   .dropdown-content a {
@@ -411,9 +438,13 @@ svg{
         transition: top .3s ease-in;
          /* margin-top: 100px; */
         /* padding-bottom: 100px;  */
+        z-index: 0;
     }
     .menu__list.active{
         top: 0;
+    }
+    .menu__list.active #search{
+        display: none;
     }
     .dropdown, .menu__items > a{
         height: 30px;

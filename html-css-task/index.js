@@ -325,15 +325,19 @@ for(let item of projects){
     textBlock.append(description);
 
     link.append(project)
-    console.log(project)
 
     projectBlock.append(link);
 }
 
+
 for(let elem of document.querySelectorAll('.dropdown')){
     let menuItem = elem.closest(".menu__items");
-    elem.addEventListener("click", e => menuItem.classList.toggle('active'))
-    elem.removeEventListener("click", e => menuItem.classList.toggle('active'))
+    elem.addEventListener("click", function(e) {
+        if(window.screen.width <= 900)  menuItem.classList.toggle('active')
+    })
+    elem.removeEventListener("click", function(e) {
+        if(window.screen.width <= 900)  menuItem.classList.toggle('active')
+    })
 }
 
 for(let elem of document.querySelectorAll('.controller')){
@@ -348,10 +352,44 @@ for(let elem of document.querySelectorAll('.controller')){
     });
 }
 
+const input = document.querySelector('#search');
+input.addEventListener('keyup', (e) => {
+    const text = e.currentTarget.value;
 
+    clearTimeout(300);
 
-// {
-//     title: "Spring Boot",
-//     description: "Takes an opinionated view of building Spring applications and gets you up and running as quickly as possible",
-//     imageSrc: "assets/images/card-images/spring-boot.svg",
-// },
+    timer = setTimeout(() => {
+        projectSearch(text);
+    }, 300);
+});
+
+function projectSearch(text){
+    let empty = document.querySelector(".search__result");
+    text = text.toLowerCase().trim();
+    let cardText = document.querySelectorAll('.card > .text');
+    if(text != ''){
+        cardText.forEach(function(element){
+            let cardProject = element.closest(".card__link");
+            let title = element.querySelector(".card__title").innerHTML.toLowerCase();
+            let description = element.querySelector(".card__description").innerHTML.toLowerCase();
+                if(title.search(text) === -1 || description.search(text) === -1){
+                    cardProject.classList.add("hide");
+                }
+                else{
+                    cardProject.classList.remove("hide");
+                    empty.classList.add("hidden");
+                }
+        })
+        let hidenProjects = document.querySelectorAll(".hide");
+        if(cardText.length === hidenProjects.length) {
+            empty.classList.remove('hidden');
+        }
+    }
+    else{
+        empty.classList.add("hidden");
+        cardText.forEach(function(element){
+            let cardProject = element.closest(".card__link");
+                cardProject.classList.remove("hide");
+        })
+    }
+}
