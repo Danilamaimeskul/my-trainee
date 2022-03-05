@@ -114,7 +114,7 @@ header>.container{
     overflow: hidden;
 }
 .search__block{
-    width: 100%;
+    width: 98%;
     margin-bottom: 60px;
     display: flex;
     justify-content: space-between;
@@ -147,11 +147,13 @@ header>.container{
 }
 .card__link{
     width: 48%;
+    min-height: 170px;
+
 }
 .card{
     /* max-width: 382px; */
     padding: 40px 30px;
-    height: 170px;
+    min-height: 170px;
     /* margin: 0 0 25px 25px; */
     background-color: white;
     display: flex;
@@ -170,7 +172,7 @@ header>.container{
     margin-left: 20px;
 }
 .card__description{
-    line-height: 20px;
+    line-height: 28px;
     margin-top: 15px;
 }
 
@@ -380,6 +382,7 @@ svg{
 .bottom__text>.text{
     color: #4f5e5e7c;
     margin-bottom: 20px;
+    line-height: 1.5em;
 }
 @media (min-width: 901px){
     .menu__items:hover .dropdown-content {
