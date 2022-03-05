@@ -286,7 +286,9 @@ for(let item of headerMenu){
         dropdownButton.className = 'dropdown';
         dropdownButton.innerHTML = `
             <span class="dropbtn">${item.title}</span>
-            <div class="nav-arrow"></div>
+            <div class="arrow">
+                <div class="nav-arrow"></div>
+            </div>
         `;
 
         menuItem.append(dropdownButton);
@@ -333,7 +335,20 @@ for(let item of projects){
 for(let elem of document.querySelectorAll('.dropdown')){
     let menuItem = elem.closest(".menu__items");
     elem.addEventListener("click", function(e) {
-        if(window.screen.width <= 900)  menuItem.classList.toggle('active')
+        if(window.screen.width <= 900)  {
+            for(let elements of document.querySelectorAll('.menu__items.active')){
+                let dropdownContent = elements.querySelector(".dropdown-content");
+                elements.classList.remove('active');
+                dropdownContent.style.maxHeight = null;
+            }
+            menuItem.classList.toggle('active')
+            let dropdownContent = menuItem.querySelector(".dropdown-content");
+            if (dropdownContent.style.maxHeight) {
+                dropdownContent.style.maxHeight = null;
+              } else {
+                dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
+              } 
+        }
     })
     elem.removeEventListener("click", function(e) {
         if(window.screen.width <= 900)  menuItem.classList.toggle('active')

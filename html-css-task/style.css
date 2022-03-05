@@ -436,7 +436,6 @@ svg{
         /* justify-content: flex-start; */
         flex-direction: column; 
         margin-left: 20px;
-        border-bottom: 1px solid lightgray;
         height: fit-content;
     }
     .menu__items:first-child{
@@ -445,7 +444,31 @@ svg{
     .menu__items:last-child{
         margin-bottom: 150px;
     }
+    .menu__items.active .nav-arrow{
+        -webkit-transform: rotate(45deg) translateY(10px) scale(-1.5);
+    }
+    .arrow{
+        /* margin-right: 11px; */
+    }
+    .nav-arrow{
+        border-color: white;
+        transition: all .2s ease-in;
+        -webkit-transform: rotate(45deg) translate(-5px,5px) scale(1.5);
+        /* transform: scale(1.5);
+        transform: rotate(45deg) translateY(-6px) scale(1.5); */
+    }
+    .dropdown{
+        width: 100%;
+        justify-content: space-between;
+
+    }
+    .dropdown, .menu__items > a{
+        padding-bottom: 15px;
+       border-bottom: 1px solid lightgray;
+
+    }
     .dropdown-content{
+        box-shadow: none;
         position: relative;
         visibility: visible;
         opacity: 1;
@@ -457,10 +480,12 @@ svg{
         overflow: hidden;
     }
     .menu__items.active .dropdown-content{
-        max-height: fit-content;
+        /* max-height: fit-content; */
     }
     .dropdown-content>a{
-        color: white
+       color:  #98afae;
+       padding-left: 0;
+
     }
     .menu__list.active{
         top: 0;
@@ -551,6 +576,9 @@ svg{
 }
 
 @media (max-width: 800px){
+    h1.title{
+        margin-top: 55px;
+    }
     .card__link{
         width: 100%;
         margin-right: 25px;
