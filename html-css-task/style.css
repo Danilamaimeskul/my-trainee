@@ -326,6 +326,10 @@ li a, .dropbtn {
     justify-content: space-between;
     display: flex;
 }
+.text__social{
+    display: flex;
+    flex-direction: row-reverse;
+}
 .bottom__title{
     display: flex;
     justify-content: space-between;
@@ -407,6 +411,15 @@ svg{
         background-color: white;
     }
 
+    footer{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .block{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
     body.lock{
         overflow: hidden;
     }
