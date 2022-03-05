@@ -373,11 +373,13 @@ for(let elem of document.querySelectorAll('.controller')){
     });
 }
 
+let timer 
+
 const input = document.querySelector('#search');
 input.addEventListener('keyup', (e) => {
     const text = e.currentTarget.value;
 
-    clearTimeout(300);
+    clearTimeout(timer);
 
     timer = setTimeout(() => {
         projectSearch(text);
