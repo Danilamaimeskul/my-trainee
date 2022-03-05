@@ -336,10 +336,13 @@ for(let elem of document.querySelectorAll('.dropdown')){
     let menuItem = elem.closest(".menu__items");
     elem.addEventListener("click", function(e) {
         if(window.screen.width <= 900)  {
-            for(let elements of document.querySelectorAll('.menu__items.active')){
-                let dropdownContent = elements.querySelector(".dropdown-content");
-                elements.classList.remove('active');
-                dropdownContent.style.maxHeight = null;
+            console.log(e);
+            if(!menuItem.classList.contains("active")){
+                for(let elements of document.querySelectorAll('.menu__items.active')){
+                    let dropdownContent = elements.querySelector(".dropdown-content");
+                    elements.classList.remove('active');
+                    dropdownContent.style.maxHeight = null;
+                }
             }
             menuItem.classList.toggle('active')
             let dropdownContent = menuItem.querySelector(".dropdown-content");
