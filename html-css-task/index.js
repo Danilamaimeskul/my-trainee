@@ -342,12 +342,15 @@ for(let elem of document.querySelectorAll('.dropdown')){
 
 for(let elem of document.querySelectorAll('.controller')){
     const burgerMenu = document.querySelector(".menu__list");
+    const xMark = document.querySelector(".x-mark")
     elem.addEventListener("click", function(e) {
         burgerMenu.classList.toggle('active')
+        xMark.classList.toggle('active')
         document.body.classList.toggle('lock');
     });
     elem.removeEventListener("click", function(e) {
         burgerMenu.classList.toggle('active')
+        xMark.classList.toggle('active')
         document.body.classList.toggle('lock');
     });
 }
