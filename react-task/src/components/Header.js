@@ -10,6 +10,7 @@ import { useState } from 'react';
 function Header(props) {
     const menuRef = useRef(null);
     const xMarkRef = useRef(null);
+    const itemRef = useRef(null);
 
 
     
@@ -25,14 +26,13 @@ function Header(props) {
 
 
 
-        console.log(menuRef.current)
 
         return (
             <ul className={`menu__list`} ref={menuRef}>
                 {headerMenu.map(({title, dropdown, href}) =>{
 
                     return dropdown ? 
-                        <li className='menu__items'>
+                        <li className='menu__items' onClick={toggleMenuItem}>
                             <div className='dropdown'>
                                 <span className='dropbtn'>{title}</span>
                                 <NavArrow />
@@ -68,6 +68,28 @@ function Header(props) {
         )
     }
 
+    const toggleMenuItem = (e) => {
+        if(window.screen.width <= 900){
+            let menuItem = e.target.offsetParent
+            let dropdownContent = e.target.offsetParent.lastChild;
+
+            if(!menuItem.classList.contains("active")){
+                for(let elements of e.target.offsetParent.offsetParent.childNodes){
+                    let dropdownContent = elements.lastChild;
+                    elements.classList.remove('active');
+                    dropdownContent.style.maxHeight = null;
+                }
+            }
+
+            menuItem.classList.toggle('active');
+            if (dropdownContent.style.maxHeight) {
+                dropdownContent.style.maxHeight = null;
+            } else {
+                dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
+            } 
+        }
+    }
+
     const changeDropDown = () =>{
         menuRef.current.classList.toggle('active');
         xMarkRef.current.classList.toggle('active');
@@ -100,7 +122,6 @@ function Header(props) {
                 <MenuList   />
                 <Burger   />
                 <XMark     />
-                {/* {console.log(window.screen.width)} */}
             </div>
         </header>
     );
