@@ -1,0 +1,136 @@
+const projects = [
+    {
+        title: "Spring Boot",
+        description: "Takes an opinionated view of building Spring applications and gets you up and running as quickly as possible",
+        imageSrc: "assets/images/card-images/spring-boot.svg",
+        href: '#',
+    },
+    {
+        title: "Spring Framework",
+        description: "Provides core support for dependency injection, transaction management, web apps, data access, messaging, and more.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-framework-2.svg",
+    },
+    {
+        href: '#',
+        title: "Spring Data",
+        description: "Provides a consistent approach to data access – relational, non-relational, map-reduce, and beyond.",
+        imageSrc: "assets/images/card-images/spring-data-3.svg",
+    },
+    {
+        title: "Spring Cloud",
+        description: "Provides a set of tools for common patterns in distributed systems. Useful for building and deploying microservices.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-cloud-4.svg",
+    },
+    {
+        title: "Spring Cloud Data Flow",
+        description: "Provides an orchestration service for composable data microservice applications on modern runtimes.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-data-flow-5.svg",
+    },
+    {
+        title: "Spring Security",
+        description: "Protects your application with comprehensive and extensible authentication and authorization support.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-security-6.svg",
+    },
+    {
+        title: "Spring for GraphQL",
+        description: "Spring for GraphQL provides support for Spring applications built on GraphQL Java.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-graphql-7.svg",
+    },
+    {
+        title: "Spring Session",
+        description: "Provides an API and implementations for managing a user’s session information.",
+        href: '#',
+        imageSrc: "assets/images/card-images/logo-session-8.png",
+    },
+    {
+        title: "Spring Integration",
+        description: "Supports the well-known Enterprise Integration Patterns through lightweight messaging and declarative adapters.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-integration-9.svg",
+    },
+    {
+        title: "Spring HATEOAS",
+        description: "Simplifies creating REST representations that follow the HATEOAS principle.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-hateoas-10.svg",
+    },
+    {
+        title: "Spring REST Docs",
+        description: "Lets you document RESTful services by combining hand-written documentation with auto-generated snippets produced with Spring MVC Test or REST Assured.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-restdocs-11.png",
+    },
+    {
+        title: "Spring Batch",
+        description: "Simplifies and optimizes the work of processing high-volume batch operations.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-batch-12.svg",
+    },
+    {
+        title: "Spring AMQP",
+        description: "Applies core Spring concepts to the development of AMQP-based messaging solutions.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-amqp-13.svg",
+    },
+    {
+        title: "Spring CredHub",
+        description: "Provides client-side support for storing, retrieving, and deleting credentials from a CredHub server running in a Cloud Foundry platform.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-14.svg",
+    },
+    {
+        title: "Spring Flo",
+        description: "Provides a JavaScript library that offers a basic embeddable HTML5 visual builder for pipelines and simple graphs.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-flo-15.svg",
+    },
+    {
+        title: "Spring for Apache Kafka",
+        description: "Provides Familiar Spring Abstractions for Apache Kafka.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-kafka-16.svg",
+    },
+    {
+        title: "Spring LDAP",
+        description: "Simplifies the development of applications that use LDAP by using Spring's familiar template-based approach.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-ldap-17.svg",
+    },
+    {
+        title: "Spring Shell",
+        description: "Makes writing and testing RESTful applications easier with CLI-based resource discovery and interaction.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-shell-18.svg",
+    },
+    {
+        title: "Spring Statemachine",
+        description: "Provides a framework for application developers to use state machine concepts with Spring applications.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-statemachine-19.svg",
+    },
+    {
+        title: "Spring Vault",
+        description: "Provides familiar Spring abstractions for HashiCorp Vault",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-20.svg",
+    },
+    {
+        title: "Spring Web Flow",
+        description: "Supports building web applications that feature controlled navigation, such as checking in for a flight or applying for a loan.",
+        href: '#',
+        imageSrc: "assets/images/card-images/spring-web-flo-21.svg",
+    },
+    {
+        title: "Spring Web Services",
+        description: "Facilitates the development of contract-first SOAP web services.",
+        href: '#',
+        imageSrc: "assets/images/card-images/logo-web-services-22.svg",
+    },
+];
+
+export default projects;
