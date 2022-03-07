@@ -336,7 +336,7 @@ for(let elem of document.querySelectorAll('.dropdown')){
     let menuItem = elem.closest(".menu__items");
     elem.addEventListener("click", function(e) {
         if(window.screen.width <= 900)  {
-            console.log(e);
+            // console.log(e);
             if(!menuItem.classList.contains("active")){
                 for(let elements of document.querySelectorAll('.menu__items.active')){
                     let dropdownContent = elements.querySelector(".dropdown-content");
@@ -373,7 +373,7 @@ for(let elem of document.querySelectorAll('.controller')){
     });
 }
 
-let timer 
+let timer;
 
 const input = document.querySelector('#search');
 input.addEventListener('keyup', (e) => {
