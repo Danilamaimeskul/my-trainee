@@ -1,15 +1,34 @@
 import CardsBlock from "./CardsBlock";
 import projects from "../../data/projects";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 
 const ProjectsBlock = () =>{
+    
+
+    const [filtredCards, setCards] = useState(projects)
 
     const [searchValue, setValue] = useState('');
 
-    let filtredCards = projects.filter(({title, description}) => {
-        return searchValue === '' || (title.toLowerCase().includes(searchValue.toLowerCase()) || description.toLowerCase().includes(searchValue.toLowerCase()))
-    })
+    useEffect(() =>{
+
+        const filterCards = () =>{
+
+             setCards(projects.filter(({title, description}) => {
+                console.log(searchValue, title, description)
+                return searchValue === '' || (title.toLowerCase().includes(searchValue.toLowerCase()) || description.toLowerCase().includes(searchValue.toLowerCase()))
+            }))
+        }
+
+        let timer = setTimeout(() =>{
+            if(searchValue) filterCards()
+        }, 300)
+
+        return () => clearTimeout(timer);
+
+    }, [searchValue])
+
+    
 
     return(
         <div className='block'>
