@@ -9,9 +9,9 @@ const Prefooter = () =>{
             <div className="container prefooter">
                 <div className="circle" />
                 <img src={image} className="circle__grid"/>
-                {prefooter.map(({title, description, href})=>{
+                {prefooter.map(({title, description, href}, index)=>{
                     return(
-                        <div className="prefooter__card">
+                        <div className="prefooter__card" key={index}>
                             <h2 className="title">{title}</h2>
                             <p className="text">{description}</p>
                             <a className="prefooter__link" href={href}>Learn more</a>

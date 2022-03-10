@@ -1,9 +1,9 @@
 const CardsBlock = ({projects}) =>{
     return(
         <div className='cards__block'>
-            {projects.map((item) => {
+            {projects.map((item, index) => {
                 return(
-                    <Card item={item}/>
+                    <Card item={item} key={index}/>
                 )
             })}
         </div>

@@ -24,15 +24,12 @@ function Header(props) {
 
     function MenuList() {
 
-
-
-
         return (
             <ul className={`menu__list`} ref={menuRef}>
-                {headerMenu.map(({title, dropdown, href}) =>{
+                {headerMenu.map(({title, dropdown, href}, index) =>{
 
                     return dropdown ? 
-                        <li className='menu__items' onClick={toggleMenuItem}>
+                        <li className='menu__items' onClick={toggleMenuItem} key={index}>
                             <div className='dropdown'>
                                 <span className='dropbtn'>{title}</span>
                                 <NavArrow />
@@ -40,7 +37,7 @@ function Header(props) {
                             <DropdownContent content={dropdown}/>
                         </li>
                         :
-                        <li className='menu__items'>
+                        <li className='menu__items' key={index}>
                             <a href={href}>{title}</a>
                         </li>;
                 })}
@@ -59,9 +56,9 @@ function Header(props) {
     function DropdownContent({content}){
         return(
             <div className='dropdown-content'>
-                {content.map(({href, text}) => {
+                {content.map(({href, text}, index) => {
                     return(
-                        <a href={href}>{text}</a>
+                        <a key={index} href={href}>{text}</a>
                     )
                 })}
             </div>

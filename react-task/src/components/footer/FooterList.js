@@ -5,9 +5,9 @@ import footer from '../../data/footer';
 const FooterList = () => {
     return (
         <ul className='footer__list'>
-            {footer.map(item => {
+            {footer.map((item, index) => {
                 return(
-                    <FooterSublist data = {item} />
+                    <FooterSublist data = {item} key={index}/>
                 )
             })}
             <InputSubList />
@@ -18,9 +18,9 @@ const FooterList = () => {
 const FooterSublist = ({data}) =>{
     return(
         <li className='footer__sublist'>
-            {data.map(({text, isBold, href}) =>{
+            {data.map(({text, isBold, href}, index) =>{
                 return(
-                    <a href={href} className={isBold ? 'first' : ''}>{text}</a>
+                    <a key={index} href={href} className={isBold ? 'first' : ''}>{text}</a>
                 )
             })}    
         </li>

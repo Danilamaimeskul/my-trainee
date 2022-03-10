@@ -7,9 +7,9 @@ function AtticProjects(props) {
             <div className='container'>
                 <h2 className='title'>Projects in the Attic</h2>
                 <div className='projects__block'>
-                    {attic.map(({title, description}) =>{
+                    {attic.map(({title, description}, index) =>{
                         return(
-                            <a className='project' href='#'>
+                            <a className='project' href='#' key={index}>
                                 <div className='project__text'>
                                     <p className='project__title'>{title}</p>    
                                     <p className='project__text'>{description}</p>    
