@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 import projects from '../data/projects';
 import DescriptionBlock from './main/DescriptionBlock';
 import ProjectsBlock from './main/ProjectBlock';
+import Prefooter from './main/Prefooter';
+
 
 function Main(props) {
     return (
@@ -12,6 +14,7 @@ function Main(props) {
             <DescriptionBlock />
             <ProjectsBlock />
             <AtticProjects />
+            <Prefooter />
         </main>
     );
 }
