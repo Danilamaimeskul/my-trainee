@@ -11,17 +11,16 @@ const ProjectsBlock = () =>{
     const [searchValue, setValue] = useState('');
 
     useEffect(() =>{
-
         const filterCards = () =>{
 
              setCards(projects.filter(({title, description}) => {
-                console.log(searchValue, title, description)
+                
                 return searchValue === '' || (title.toLowerCase().includes(searchValue.toLowerCase()) || description.toLowerCase().includes(searchValue.toLowerCase()))
             }))
         }
 
         let timer = setTimeout(() =>{
-            if(searchValue) filterCards()
+            filterCards()
         }, 300)
 
         return () => clearTimeout(timer);
