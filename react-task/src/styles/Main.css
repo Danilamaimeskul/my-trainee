@@ -113,7 +113,27 @@
 .project__text{
     line-height: 25px;
 }
+.container>.title{
+    margin-bottom: 100px;
+}
 
+
+@media (max-width: 1000px) {
+
+   
+    .cards__block{
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+
+   
+    .block{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
 
 @media (max-width: 800px){
     h1.title{
