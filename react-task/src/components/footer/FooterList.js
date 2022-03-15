@@ -1,8 +1,12 @@
+import { useSelector } from "react-redux";
+
 import React from 'react';
 import '../../styles/Footer.css'
-import footer from '../../data/footer';
 
 const FooterList = () => {
+
+    const footer = useSelector( ({footer}) => footer.footer)
+
     return (
         <ul className='footer__list'>
             {footer.map((item, index) => {

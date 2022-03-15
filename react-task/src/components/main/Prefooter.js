@@ -1,9 +1,14 @@
-import prefooter from "../../data/prefooter"
+import { useSelector } from "react-redux";
+
+
 import image from "../../assets/images/footer-circles-grid.svg"
 import "../../styles/Prefooter.css"
 
 
 const Prefooter = () =>{
+
+    const prefooter = useSelector( ({prefooter}) => prefooter.prefooter)
+
     return(
         <div className="block">
             <div className="container prefooter">

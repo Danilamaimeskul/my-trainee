@@ -1,10 +1,11 @@
 import CardsBlock from "./CardsBlock";
-import projects from "../../data/projects";
 import { useState,useEffect } from "react";
+import { useSelector } from "react-redux";
 
 
 const ProjectsBlock = () =>{
     
+    const projects = useSelector(({projects}) => projects.projects)
 
     const [filtredCards, setCards] = useState(projects)
 

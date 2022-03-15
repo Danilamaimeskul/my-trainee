@@ -1,7 +1,11 @@
+import { useSelector } from "react-redux";
+
 import React from 'react';
-import attic from '../data/attic';
 
 function AtticProjects(props) {
+
+    const attic = useSelector( ({attic}) => attic.attic)
+
     return (
         <div className='block projects'>
             <div className='container'>

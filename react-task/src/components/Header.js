@@ -1,9 +1,8 @@
 import React, { useRef } from 'react';
-import headerMenu from '../data/headerMenu';
+import { useSelector } from "react-redux";
 import '../styles/Header.css'
 import logo from '../assets/images/logo.svg'
 import xMark from '../assets/images/x-mark.svg'
-import { useState } from 'react';
 
 
 
@@ -11,6 +10,8 @@ function Header(props) {
     const menuRef = useRef(null);
     const xMarkRef = useRef(null);
     const itemRef = useRef(null);
+
+    const headerMenu = useSelector( ({headerMenu}) => headerMenu.headerMenu)
 
 
     
