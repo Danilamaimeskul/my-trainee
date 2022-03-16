@@ -1,4 +1,5 @@
-import {Route, Routes, Link} from 'react-router-dom'
+import {Route, Routes, Link, Navigate} from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 import './styles/App.css';
 
@@ -7,9 +8,12 @@ import Loginpage from './pages/Loginpage';
 
 
 function App() {
+
+  const user = useSelector( ({user}) => user)
+
   return (
     <Routes>
-      <Route path='/' element={<Homepage/>}/>
+      <Route path='/' element={user.isLogin ? <Homepage/> : <Navigate to="/login"/>}/>
       <Route path='/login' element={<Loginpage />} />
     </Routes>
   );
