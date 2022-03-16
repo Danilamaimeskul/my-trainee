@@ -27,7 +27,7 @@ function Loginpage(props) {
             <h1>LogIn</h1>
             <form onSubmit={handleSubmit} className='login__form'>
                 <label className='inputs'>
-                    <input className='text__input' placeholder='login' type="text" onChange={e => {setLogin(e.target.value)}}/>
+                    <input className='text__input' placeholder='username' type="text" onChange={e => {setLogin(e.target.value)}}/>
                     <input className='text__input' placeholder='password' type="password" onChange={e => {setPassword(e.target.value)}}/>
                 </label>
                 <input type="submit" className='submit__btn' value={'LogIn'}/>

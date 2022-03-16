@@ -51,7 +51,6 @@ function Header(props) {
                             <a href={href}>{title}</a>
                         </li>;
                 })}
-                {/* onClick={dispatch({type: "LOG_OUT"})} */}
                 <li className='menu__items'>{user.isLogin ? <a href='#' onClick={logOut}>logout</a> : <Link to="/login" className='login__btn'>login</Link> }</li>
             </ul>
         );
