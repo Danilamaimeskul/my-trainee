@@ -1,16 +1,17 @@
+import {Route, Routes, Link} from 'react-router-dom'
+
 import './styles/App.css';
-import Header from './components/Header';
-import Main from './components/Main';
-import AtticProjects from './components/AtticProjects';
-import Footer from './components/Footer';
+
+import Homepage from './pages/Homepage';
+import Loginpage from './pages/Loginpage';
+
 
 function App() {
   return (
-   <div>
-     <Header />
-     <Main />
-     <Footer />
-   </div>
+    <Routes>
+      <Route path='/' element={<Homepage/>}/>
+      <Route path='/login' element={<Loginpage />} />
+    </Routes>
   );
 }
 

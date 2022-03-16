@@ -79,6 +79,10 @@ li a, .dropbtn {
     /* padding: 14px 16px; */
     text-decoration: none;
   }
+
+  .login__btn{
+      color:  #6db33f;
+  }
   
   a:hover{
     color: #6db33f;

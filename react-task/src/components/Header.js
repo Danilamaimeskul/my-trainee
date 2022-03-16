@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {Link} from 'react-router-dom'
+
 import '../styles/Header.css'
 import logo from '../assets/images/logo.svg'
 import xMark from '../assets/images/x-mark.svg'
@@ -11,7 +13,10 @@ function Header(props) {
     const xMarkRef = useRef(null);
     const itemRef = useRef(null);
 
+
+    const user = useSelector( ({user}) => user)
     const headerMenu = useSelector( ({headerMenu}) => headerMenu.headerMenu)
+    const dispatch = useDispatch(user)
 
 
     
@@ -21,6 +26,10 @@ function Header(props) {
                 <img className='logo' src={logo} alt='logo'></img>
             </a>
         );
+    }
+
+    const logOut = () => {
+        dispatch({type: "LOG_OUT"})
     }
 
     function MenuList() {
@@ -42,6 +51,8 @@ function Header(props) {
                             <a href={href}>{title}</a>
                         </li>;
                 })}
+                {/* onClick={dispatch({type: "LOG_OUT"})} */}
+                <li className='menu__items'>{user.isLogin ? <a href='#' onClick={logOut}>logout</a> : <Link to="/login" className='login__btn'>login</Link> }</li>
             </ul>
         );
     }
