@@ -27,7 +27,7 @@ const ProjectsBlock = () =>{
         .then(
             (result) => {
                 setIsLoaded(true);
-                setCards(result.projects.projects)
+                setCards(result.projects)
             },
             (error) => {
                 setIsLoaded(true);
