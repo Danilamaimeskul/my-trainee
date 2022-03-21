@@ -1,7 +1,11 @@
 import {Route, Routes, Link, Navigate} from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchProjects } from './http/index';
+import getProjects from './store/actionsCreators/projectsAction'
 
 import './styles/App.css';
+
 
 import Homepage from './pages/Homepage';
 import Loginpage from './pages/Loginpage';
@@ -9,6 +13,9 @@ import Loginpage from './pages/Loginpage';
 
 function App() {
 
+
+  
+  // const projects = useSelector(({projects}) => projects.projects)
   const user = useSelector( ({user}) => user)
 
   return (

@@ -1,5 +1,5 @@
 import userReducer from "./userReducer";
-import projectsReducer from "./projectsReducer";
+// import projectsReducer from "./projectsReducer";
 
 import {combineReducers} from 'redux';
 import atticReducer from "./atticReducer";
@@ -9,7 +9,7 @@ import headerMenuReducer from "./headerMenuReducer";
 
 const rootReducer = combineReducers({
     user: userReducer,
-    projects: projectsReducer,
+    // projects: projectsReducer,
     attic: atticReducer,
     footer: footerReducer,
     prefooter: prefooterReducer,
