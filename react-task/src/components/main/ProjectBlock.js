@@ -12,17 +12,10 @@ const ProjectsBlock = () =>{
     
     useEffect(() =>{
         // const filterCards = () =>{ setCards(   filtredCards.filter(() => true))}
-            
-            let timer = setTimeout(() =>{
-                    // filterCards()
-            }, 300)
-            return () => clearTimeout(timer);
-    }, [searchValue])
-        
-        
-        
-    useEffect(()=>{
-        fetch('api')
+        fetch('api',{
+            method: 'GET',
+            body: JSON.stringify(searchValue)
+        })
         .then(res => res.json())
         .then(
             (result) => {
@@ -34,7 +27,28 @@ const ProjectsBlock = () =>{
                 setError(error);
             }
         )
-    }, [])
+        let timer = setTimeout(() =>{
+                // filterCards()
+        }, 300)
+        return () => clearTimeout(timer);
+    }, [searchValue])
+        
+        
+        
+    // useEffect(()=>{
+    //     fetch('api')
+    //     .then(res => res.json())
+    //     .then(
+    //         (result) => {
+    //             setIsLoaded(true);
+    //             setCards(result.projects)
+    //         },
+    //         (error) => {
+    //             setIsLoaded(true);
+    //             setError(error);
+    //         }
+    //     )
+    // }, [])
 
     if (error) {
             return <div>Ошибка: {error.message}</div>;
