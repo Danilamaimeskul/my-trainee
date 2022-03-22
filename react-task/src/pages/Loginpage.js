@@ -14,12 +14,48 @@ function Loginpage(props) {
     const dispatch = useDispatch(user);
 
     const handleSubmit = (e) => {
-        if(login === 'admin' && password === "1234") {
-            dispatch({type: "LOG_IN"});
-            navigate(`/`)
-        }
-        else alert('Wrong password')
         e.preventDefault();
+
+        let details = {
+            'login' : login,
+            'password': password,
+        }
+        let formBody = [];
+        for(let property in details){
+            let encodedKey = encodeURIComponent(property);
+            let encodedValue = encodeURIComponent(details[property])
+            formBody.push(encodedKey + "=" + encodedValue);
+        }
+        formBody = formBody.join("&");
+
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title: 'React Hooks POST Request Example' })
+            };
+            fetch(`auth`,{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                },
+                body: formBody
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if(data){
+                        dispatch({type: "LOG_IN"});
+                        navigate(`/`)
+                    }
+                    else alert('Wrong password or login')
+                });
+        
+
+
+        // if(login === 'admin' && password === "1234") {
+        //     dispatch({type: "LOG_IN"});
+        //     navigate(`/`)
+        // }
+        // else alert('Wrong password')
     }
 
     return (
