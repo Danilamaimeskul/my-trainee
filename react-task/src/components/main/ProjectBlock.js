@@ -10,25 +10,28 @@ const ProjectsBlock = () =>{
     const [filtredCards, setCards] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     
+
     useEffect(() =>{
-        // const filterCards = () =>{ setCards(   filtredCards.filter(() => true))}
-        fetch('api',{
-            method: 'GET',
-            body: JSON.stringify(searchValue)
-        })
-        .then(res => res.json())
-        .then(
-            (result) => {
-                setIsLoaded(true);
-                setCards(result.projects)
-            },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            }
-        )
+       
+    }, [searchValue])
+
+    useEffect(() =>{
+
         let timer = setTimeout(() =>{
-                // filterCards()
+            fetch(`api?value=${searchValue}`,{
+                method: 'GET',
+            })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setCards(result.filtred)
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
         }, 300)
         return () => clearTimeout(timer);
     }, [searchValue])
