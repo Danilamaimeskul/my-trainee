@@ -4,7 +4,8 @@
   "description": "/server/node_modules",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/Danilamaimeskul/my-trainee#readme",
   "devDependencies": {
-    "prettier": "2.6.0"
+    "husky": "^7.0.0",
+    "prettier": "2.6.0",
+    "pretty-quick": "^3.1.3"
   }
 }
