@@ -1,8 +1,5 @@
 import { Route, Routes, Link, Navigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchProjects } from "./http/index";
-import getProjects from "./store/actionsCreators/projectsAction";
 
 import "./styles/App.css";
 
