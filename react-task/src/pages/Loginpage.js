@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom'
+import fetchAuth from '../http/index'
 
 import '../styles/LoginPage.css'
 
@@ -20,42 +21,14 @@ function Loginpage(props) {
             'login' : login,
             'password': password,
         }
-        let formBody = [];
-        for(let property in details){
-            let encodedKey = encodeURIComponent(property);
-            let encodedValue = encodeURIComponent(details[property])
-            formBody.push(encodedKey + "=" + encodedValue);
-        }
-        formBody = formBody.join("&");
-
-            const requestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ title: 'React Hooks POST Request Example' })
-            };
-            fetch(`auth`,{
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-                },
-                body: formBody
+        let auth = fetchAuth(details)
+        auth.then(data => {
+                if(data){
+                    dispatch({type: "LOG_IN"});
+                    navigate(`/`)
+                }
+                else alert('Wrong password or login')
             })
-                .then(response => response.json())
-                .then(data => {
-                    if(data){
-                        dispatch({type: "LOG_IN"});
-                        navigate(`/`)
-                    }
-                    else alert('Wrong password or login')
-                });
-        
-
-
-        // if(login === 'admin' && password === "1234") {
-        //     dispatch({type: "LOG_IN"});
-        //     navigate(`/`)
-        // }
-        // else alert('Wrong password')
     }
 
     return (

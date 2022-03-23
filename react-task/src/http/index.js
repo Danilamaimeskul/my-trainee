@@ -1,13 +1,19 @@
-import axios from "axios";
-
-const $host = axios.create({
-    baseURL: process.env.REACT_APP_API_URL
-})
-
-export const fetchProjects = async () => {
-    const {data} = await $host.get('api')
-    // console.log(data);
-    return data;
+const fetchAuth = (details) => {
+    let formBody = [];
+        for(let property in details){
+            let encodedKey = encodeURIComponent(property);
+            let encodedValue = encodeURIComponent(details[property])
+            formBody.push(encodedKey + "=" + encodedValue);
+        }
+        formBody = formBody.join("&");
+            return fetch(`auth`,{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                },
+                body: formBody
+            })
+            .then(response => response.json())
 }
 
-
+export default fetchAuth
