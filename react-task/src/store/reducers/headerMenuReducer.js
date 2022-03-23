@@ -1,14 +1,14 @@
-import headerMenu from '../../data/headerMenu';
+import headerMenu from "../../data/headerMenu";
 
 const defaultState = {
-    headerMenu: headerMenu
-}
+  headerMenu: headerMenu,
+};
 
 const headerMenuReducer = (state = defaultState, action) => {
-    switch(action.type){
-        default:
-            return state
-    }
-}
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
 
 export default headerMenuReducer;

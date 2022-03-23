@@ -1,14 +1,14 @@
-import footer from '../../data/footer';
+import footer from "../../data/footer";
 
 const defaultState = {
-    footer: footer,
-}
+  footer: footer,
+};
 
 const footerReducer = (state = defaultState, action) => {
-    switch(action.type){
-        default:
-            return state
-    }
-}
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
 
 export default footerReducer;

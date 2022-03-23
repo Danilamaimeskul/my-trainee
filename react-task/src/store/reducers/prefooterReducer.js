@@ -1,15 +1,14 @@
-
-import prefooter from '../../data/prefooter'
+import prefooter from "../../data/prefooter";
 
 const defaultState = {
-    prefooter: prefooter,
-}
+  prefooter: prefooter,
+};
 
 const prefooterReducer = (state = defaultState, action) => {
-    switch(action.type){
-        default:
-            return state
-    }
-}
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
 
 export default prefooterReducer;

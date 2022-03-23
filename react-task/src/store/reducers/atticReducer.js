@@ -1,14 +1,14 @@
-import attic from '../../data/attic'
+import attic from "../../data/attic";
 
 const defaultState = {
-   attic: attic,
-}
+  attic: attic,
+};
 
 const atticReducer = (state = defaultState, action) => {
-    switch(action.type){
-        default:
-            return state
-    }
-}
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
 
 export default atticReducer;
