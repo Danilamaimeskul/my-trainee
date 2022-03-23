@@ -52,7 +52,6 @@ const ProjectsBlock = () => {
   } else {
     return (
       <div className="block">
-        {console.log(filtredCards.length)}
         <div className="container">
           <div className="search__block">
             <h2 className="search__result">Found: {filtredCards.length}</h2>

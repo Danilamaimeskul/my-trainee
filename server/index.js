@@ -25,4 +25,4 @@ app.post("/auth", (req, res) => {
     : res.send(false);
 });
 
-app.listen(5000, () => console.log("runned"));
+app.listen(5000, () => console.log("Runned on 5000 port"));
