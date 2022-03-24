@@ -1,5 +1,5 @@
 import CardsBlock from "./CardsBlock";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import debounce from "lodash.debounce";
 import fetchProjects from "../../api/projectsAPI";
 
@@ -7,6 +7,10 @@ const ProjectsBlock = () => {
   const [error, setError] = useState(null);
   const [filtredCards, setCards] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    getCards("");
+  }, []);
 
   const getCards = (searchValue) => {
     fetchProjects(searchValue).then(

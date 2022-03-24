@@ -7,7 +7,6 @@ import Homepage from "./pages/Homepage";
 import Loginpage from "./pages/Loginpage";
 
 function App() {
-  // const projects = useSelector(({projects}) => projects.projects)
   const user = useSelector(({ user }) => user);
 
   return (
