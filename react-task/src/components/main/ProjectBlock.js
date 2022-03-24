@@ -1,54 +1,46 @@
 import CardsBlock from "./CardsBlock";
-import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useState, useEffect, useMemo } from "react";
+import debounce from "lodash.debounce";
+import fetchProjects from "../../api/projectsAPI";
 
 const ProjectsBlock = () => {
-  const [searchValue, setValue] = useState("");
   const [error, setError] = useState(null);
   const [filtredCards, setCards] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {}, [searchValue]);
+  const getCards = (searchValue) => {
+    fetchProjects(searchValue).then(
+      (result) => {
+        setIsLoaded(true);
+        setCards(result.filtred);
+      },
+      (error) => {
+        setIsLoaded(true);
+        setError(error);
+      }
+    );
+  };
 
-  useEffect(() => {
-    let timer = setTimeout(() => {
-      fetch(`api?value=${searchValue}`, {
-        method: "GET",
-      })
-        .then((res) => res.json())
-        .then(
-          (result) => {
-            setIsLoaded(true);
-            setCards(result.filtred);
-          },
-          (error) => {
-            setIsLoaded(true);
-            setError(error);
-          }
-        );
-    }, 300);
-    return () => clearTimeout(timer);
-  }, [searchValue]);
-
-  // useEffect(()=>{
-  //     fetch('api')
-  //     .then(res => res.json())
-  //     .then(
-  //         (result) => {
-  //             setIsLoaded(true);
-  //             setCards(result.projects)
-  //         },
-  //         (error) => {
-  //             setIsLoaded(true);
-  //             setError(error);
-  //         }
-  //     )
-  // }, [])
+  const debounceProjectFetch = debounce((searchValue) => {
+    getCards(searchValue);
+  }, 300);
 
   if (error) {
-    return <div>Ошибка: {error.message}</div>;
+    return (
+      <div className="block">
+        <div className="container">
+          <h1>Error...</h1>
+        </div>
+      </div>
+    );
   } else if (!isLoaded) {
-    return <div>Загрузка...</div>;
+    return (
+      <div className="block">
+        <div className="container">
+          <h1>Loading...</h1>
+        </div>
+      </div>
+    );
   } else {
     return (
       <div className="block">
@@ -60,7 +52,7 @@ const ProjectsBlock = () => {
                 id="search"
                 className="search"
                 placeholder="Search"
-                onChange={(event) => setValue(event.target.value)}
+                onChange={(event) => debounceProjectFetch(event.target.value)}
               />
             </form>
           </div>

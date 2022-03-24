@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import fetchAuth from "../http/index";
-import { logInAction } from "../store/actionsCreators/userActions";
-
+import fetchAuth from "../api/authAPI";
 import "../styles/LoginPage.css";
 
 function Loginpage(props) {
-  let navigate = useNavigate();
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
 
