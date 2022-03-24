@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import fetchAuth from "../http/index";
+import { logInAction } from "../store/actionsCreators/userActions";
 
 import "../styles/LoginPage.css";
 
@@ -13,20 +14,14 @@ function Loginpage(props) {
   const user = useSelector(({ user }) => user);
   const dispatch = useDispatch(user);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let details = {
       login: login,
       password: password,
     };
-    let auth = fetchAuth(details);
-    auth.then((data) => {
-      if (data) {
-        dispatch({ type: "LOG_IN" });
-        navigate(`/`);
-      } else alert("Wrong password or login");
-    });
+    dispatch(fetchAuth(details));
   };
 
   return (

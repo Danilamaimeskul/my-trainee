@@ -16,7 +16,10 @@ function App() {
         path="/"
         element={user.isLogin ? <Homepage /> : <Navigate to="/login" />}
       />
-      <Route path="/login" element={<Loginpage />} />
+      <Route
+        path="/login"
+        element={!user.isLogin ? <Loginpage /> : <Navigate to="/" />}
+      />
     </Routes>
   );
 }
